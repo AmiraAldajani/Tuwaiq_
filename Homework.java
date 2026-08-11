@@ -67,10 +67,11 @@ void main() {
 
     System.out.print("Enter Sentence: ");
     String sentence = s.nextLine();
-    System.out.println("now i'll replace any word of your chosen with the word \"cat\"");
+    System.out.print("Choose a word to be used as replacement: ");
+    String wordChosen = s.nextLine();
     System.out.print("Enter the word to be replaced: ");
-    String word = s.nextLine();
-    System.out.println("result: "+sentence.replaceAll(word,"cat"));
+    String toBeReplaced = s.nextLine();
+    System.out.println("result: "+sentence.replaceAll(toBeReplaced,wordChosen));
 
 
     //Q8
