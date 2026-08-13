@@ -16,8 +16,8 @@ void main() {
     System.out.print("\nQ2: ");
     System.out.print("\nEnter a word/sentense to reverse: ");
     String userString = s.nextLine();
-    StringBuilder sb = new StringBuilder(userString);
-    System.out.print(sb.reverse());
+    for( int i=0; i < userString.length(); i++){
+            System.out.println(userString.charAt(userString.length()-1-i));}
 
 
     //Q3
