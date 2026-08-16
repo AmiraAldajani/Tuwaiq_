@@ -183,7 +183,7 @@ import java.util.Scanner;
 
         //Q17
         int input_1, input_2, input_repeat, smallNumber, largeNumber;
-        System.out.print("Enter AT LEAST two numbers: ");
+        System.out.print("\nEnter AT LEAST two numbers: ");
         input_1 = s.nextInt();
         System.out.print("Enter another: ");
         input_2 = s.nextInt();
