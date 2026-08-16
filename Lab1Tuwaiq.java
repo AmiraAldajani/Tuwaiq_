@@ -178,7 +178,7 @@ import java.util.Scanner;
         int numberToBeReverse = s.nextInt();
         String numberToBeReversed = ""+ numberToBeReverse;
         for( int i=0; i < numberToBeReversed.length(); i++){
-            System.out.println(numberToBeReversed.charAt(numberToBeReversed.length()-1-i));}
+            System.out.print(numberToBeReversed.charAt(numberToBeReversed.length()-1-i));}
 
 
         //Q17
