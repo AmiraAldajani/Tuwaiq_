@@ -106,7 +106,7 @@ public class Exercise2 {
             isEqual = false;
         }
         else {
-            for(int i = 0; i < (arrayofNumber6_1.size() -1); i++){
+            for(int i = 0; i < (arrayofNumber6_1.size()); i++){
                 if( arrayofNumber6_1.get(i) != arrayofNumber6_2.get(i) )
                     isEqual = false;
             }
