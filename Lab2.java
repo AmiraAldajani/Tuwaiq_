@@ -8,24 +8,24 @@ public class Lab2 {
         Scanner s = new Scanner(System.in);
 
         //Q1
-        System.out.println("QUESTION 1 ===================================================");
-//        ArrayList<String> stringArray = new ArrayList<>(); String word = " ";
-//        System.out.println("Enter as many words as u want: (x to exit)");
-//        while ( !word.equalsIgnoreCase("x") ){
-//            System.out.print("Enter a word (x to exit): ");
-//            word = s.nextLine();
-//            if ( !word.equalsIgnoreCase("x" )) stringArray.add(word);
-//        }
-//        int num = stringArray.get(0).length();
-//        for ( int i = 0 ; i < stringArray.size(); i++ ) {
-//            if (stringArray.get(i).length() > num)
-//                num = stringArray.get(i).length();
-//        }
-//        for ( int i = 0 ; i < stringArray.size(); i++ ) {
-//            if (stringArray.get(i).length() == num)
-//                System.out.print(stringArray.get(i)+" ");
-//        }
-//        System.out.println();
+        System.out.println("QUESTION 1 ===================================================");/*
+        ArrayList<String> stringArray = new ArrayList<>(); String word = " ";
+        System.out.println("Enter as many words as u want: (x to exit)");
+        while ( !word.equalsIgnoreCase("x") ){
+            System.out.print("Enter a word (x to exit): ");
+            word = s.nextLine();
+            if ( !word.equalsIgnoreCase("x" )) stringArray.add(word);
+        }
+        int num = stringArray.get(0).length();
+        for ( int i = 0 ; i < stringArray.size(); i++ ) {
+            if (stringArray.get(i).length() > num)
+                num = stringArray.get(i).length();
+        }
+        for ( int i = 0 ; i < stringArray.size(); i++ ) {
+            if (stringArray.get(i).length() == num)
+                System.out.print(stringArray.get(i)+" ");
+        }
+        System.out.println();*/
 
         //OR, create a new array with new values. And make old values Fixed not as input. ?
 
@@ -90,8 +90,8 @@ public class Lab2 {
             System.out.print("Please pick from the following: \n1. Accept elements.\n2. Display elements.\n3. Search an element.\n4. Sort the array.\n5. Stop");
             choice = s.nextInt();
         }
-        
-        
+
+
         //Q6
         System.out.println("QUESTION 6 ===================================================");
         int min, max, count;
@@ -116,7 +116,7 @@ public class Lab2 {
         System.out.println("QUESTION 8 ===================================================");
 
     }
-    
+
     public static void reverse( int[] i, int j, int k) {
         if (j >= k) return;
         int num = i[j];
@@ -124,8 +124,12 @@ public class Lab2 {
         i[k] = num;
         reverse(i, j + 1, k - 1);
     }
-    
+
+//    public static int getRandomNum(int min, int max) {
+//        return (int)((Math.random()* (max-min))+ min);
+//    }
     public static int getRandomNum(int min, int max) {
-        return (int)((Math.random()* (max-min))+ min);
+        Random rand = new Random();
+        return rand.nextInt(max - min + 1) + min;
     }
 }
