@@ -80,14 +80,44 @@ public class Lab2 {
 
         //Q5
         System.out.println("QUESTION 5 ===================================================");
-        System.out.print("Please pick from the following: \n1. Accept elements.\n2. Display elements.\n3. Search an element.\n4. Sort the array.\n5. Stop");
-        int choice = s.nextInt();
+        System.out.print("Please pick from the following: \n1. Accept elements.\n2. Display elements.\n3. Search an element.\n4. Sort the array.\n5. Stop\nanswer: ");
+        int choice = s.nextInt(), size; boolean isExist = false;
+        System.out.print("Please enter the size of the array: ");
+        size = s.nextInt(); s.nextLine();
+        int[] arrayUser = new int[size];
         while (choice != 5){
             switch (choice){
                 case 1:
+                    isExist = true; int element;
+                    for ( int i=0; i< size; i++){
+                        System.out.print("Enter element "+i+": ");
+                        element = s.nextInt();
+                        arrayUser[i]= element;
+                    }System.out.println(); break;
+                case 2:
+                    if (isExist){
+                        for (int i = 0; i < size; i++) {
+                            System.out.print(arrayUser[i]+" | ");
+                        }
+                        System.out.println(); break;
+                    }
+                    else {
+                        System.out.println("You have not entered the array elements yet");
+                        break;
+                    }
+                case 3:
+                    System.out.print("Enter the index of an element: ");
+                    int index = s.nextInt(); s.nextLine();
+                    System.out.println(arrayUser[index]); break;
 
+                case 4:
+                    Arrays.sort(arrayUser);
+                    for (int i = 0; i < size; i++) {
+                        System.out.print(arrayUser[i]+" | ");
+                    }
+                    System.out.println();
             }
-            System.out.print("Please pick from the following: \n1. Accept elements.\n2. Display elements.\n3. Search an element.\n4. Sort the array.\n5. Stop");
+            System.out.print("Please pick from the following: \n1. Accept elements.\n2. Display elements.\n3. Search an element.\n4. Sort the array.\n5. Stop\nanswer: ");
             choice = s.nextInt();
         }
 
@@ -99,9 +129,9 @@ public class Lab2 {
         min = s.nextInt();
         System.out.print("Enter maximum: ");
         max = s.nextInt();
-        System.out.print("Enter how many numbers to generate: ");
-        count = s.nextInt();
-        System.out.println("Random numbers within the specified range: ");
+        System.out.print("Now enter how many numbers to generate: ");
+        count = s.nextInt(); s.nextLine();
+        System.out.println("Random numbers within the specified range are: ");
         for (int i= 0; i< count; i++) {
             System.out.print(getRandomNum(min, max));
             if (i <count -1) System.out.print(" | ");
@@ -112,9 +142,27 @@ public class Lab2 {
         //Q7
         System.out.println("QUESTION 7 ===================================================");
 
+        System.out.print("Please enter your password: ");
+        String password = s.nextLine();
+        int result = PasswordChecker(password);
+
+        if (result >= 8) System.out.println("Your password is strong!");
+        else if (result >= 5) System.out.println("Your password is moderately strong");
+        else System.out.println("Your password is weak");
+
+
         //Q8
         System.out.println("QUESTION 8 ===================================================");
-
+        System.out.print("Please enter a number: ");
+        int input = s.nextInt();
+        System.out.println("Fibonacci sequence with " + input + " terms is:");
+        int newNum, zero= 0, one= 1;
+        for (int i = 0; i < input; i++) {
+            System.out.print(zero + " ");
+            newNum = zero + one;
+            zero = one;
+            one = newNum;
+        }
     }
 
     public static void reverse( int[] i, int j, int k) {
@@ -131,5 +179,29 @@ public class Lab2 {
     public static int getRandomNum(int min, int max) {
         Random rand = new Random();
         return rand.nextInt(max - min + 1) + min;
+    }
+
+
+    public static int PasswordChecker(String password) {
+        int len = password.length(), num1, num4, num2 =0, num3 =0;
+        if (len >= 8) num1= 3;
+        else if (len >= 6) num1= 2;
+        else num1= 0;
+        for (int i=0; i< password.length(); i++){
+            char c = password.charAt(i);
+            if (!Character.isLetterOrDigit(c)) num2= 2;
+        }
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (!Character.isLetterOrDigit(c)) num3= 2;
+        }
+        boolean upper = false, lower = false;
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isUpperCase(c)) upper = true;
+            if (Character.isLowerCase(c)) lower = true;
+        }
+        if (upper && lower) num4= 3;
+        else num4=0; return num1+num2+num3+num4;
     }
 }
