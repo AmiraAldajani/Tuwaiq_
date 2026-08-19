@@ -33,7 +33,7 @@ public class Lab2 {
         int num = stringArray[0].length();
         for ( int i = 0 ; i < stringArray.length; i++ ) {
             if (stringArray[i].length() > num)
-                num = stringArray[0].length();
+                num = stringArray[i].length();
         }
         ArrayList<String> newStringArr = new ArrayList<>();
         for ( int i = 0 ; i < stringArray.length; i++ ) {
@@ -105,7 +105,7 @@ public class Lab2 {
                         System.out.println("You have not entered the array elements yet");
                         break;
                     }
-                case 3:
+                case 3: // tell user if element exists or not. hes gonna enter a singular number
                     System.out.print("Enter the index of an element: ");
                     int index = s.nextInt(); s.nextLine();
                     System.out.println(arrayUser[index]); break;
@@ -187,10 +187,6 @@ public class Lab2 {
         if (len >= 8) num1= 3;
         else if (len >= 6) num1= 2;
         else num1= 0;
-        for (int i=0; i< password.length(); i++){
-            char c = password.charAt(i);
-            if (!Character.isLetterOrDigit(c)) num2= 2;
-        }
         for (int i = 0; i < password.length(); i++) {
             char c = password.charAt(i);
             if (!Character.isLetterOrDigit(c)) num3= 2;
